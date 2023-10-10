@@ -1,8 +1,6 @@
 package es2;
 
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Es2 {
   public static void main(String[] args) {
@@ -18,8 +16,10 @@ public class Es2 {
       System.out.println(elem);
     }
 
-    unorderedList(size, orderedList);
-    for (int elem : orderedList) {
+
+    List<Integer> unorderList = unorderedList(orderedList);
+
+    for (int elem : unorderList) {
       System.out.println(elem);
     }
 
@@ -34,11 +34,11 @@ public class Es2 {
     return list;
   }
 
-  public static TreeSet<Integer> unorderedList(int arraySize, TreeSet<Integer> list) {
-    TreeSet<Integer> newlist = new TreeSet<>(Collections.reverseOrder());
-    newlist = list;
+  public static List<Integer> unorderedList(TreeSet<Integer> list) {
+    List<Integer> newList = new ArrayList<>(list);
 
-    return newlist;
+    Collections.reverse(newList);
+    return newList;
   }
 }
 
