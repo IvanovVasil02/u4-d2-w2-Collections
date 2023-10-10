@@ -1,7 +1,6 @@
 package es1;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -27,10 +26,7 @@ public class Es1 {
 
         int counterEquals = 0;
 
-        Iterator<String> i = words.iterator();
-
-        while (i.hasNext()) {
-          String current = i.next();
+        for (String current : words) {
           if (words.contains(current)) counterEquals++;
         }
 
