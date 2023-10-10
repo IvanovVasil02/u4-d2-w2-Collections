@@ -8,27 +8,29 @@ public class Es1 {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
 
-    Set<String> words = new HashSet<>();
+
     System.out.println("Enter how many element you want enter: ");
     while (true) {
       try {
+        Set<String> words = new HashSet<>();
+        int counterEquals = 0;
         int arraySize = Integer.parseInt(scan.nextLine());
         for (int i = 0; i < arraySize; i++) {
           System.out.println("Enter word: ");
           String word = scan.nextLine();
-          words.add(word);
+          boolean add = words.add(word);
+          if (!add) {
+            counterEquals++;
+          }
+
         }
+
+
         for (String word : words) {
           System.out.println(word);
         }
 
         System.out.println("Number of distinct words: " + words.size());
-
-        int counterEquals = 0;
-
-        for (String current : words) {
-          if (words.contains(current)) counterEquals++;
-        }
 
         System.out.println("Duplicate values: " + counterEquals);
 
